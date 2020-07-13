@@ -1,5 +1,7 @@
 import numpy as np
 import pandas as pd
+from sklearn.datasets import load_iris
+import copy
 
 
 class Diagnostics:
@@ -63,3 +65,20 @@ class Diagnostics:
                            'p': p})
 
         return pd.crosstab(df.t, df.p, rownames=['Actual'], colnames=['Predicted'])
+
+    @staticmethod
+    def practice_data():
+        iris = load_iris()
+
+        colnames = copy.deepcopy(iris['feature_names'])
+        colnames.append('target')
+
+        iris = (
+            pd.concat([pd.DataFrame(iris['data']), pd.Series(iris['target'])], axis=1)
+                .set_axis(colnames, axis=1, inplace=False)
+                .query('target.isin([0, 1])')
+        )
+
+        return iris
+
+
