@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56659fc1-b179-45e9-b642-0e14a3c82ad4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/decision_tree_classifier.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/diagnostics.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/glm.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linear-regression.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linear-svc.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/random_forest_classifier.py" beforeDir="false" />
-    </list>
+    <list default="true" id="56659fc1-b179-45e9-b642-0e14a3c82ad4" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,12 +9,19 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.ipynb">
+          <provider selected="true" editor-type-id="jupyter-editor" />
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Jupyter Notebook" />
       </list>
     </option>
   </component>
@@ -76,6 +75,7 @@
         <option value="$PROJECT_DIR$/python/linear-svc.py" />
         <option value="$PROJECT_DIR$/python/random_forest_classifier.py" />
         <option value="$PROJECT_DIR$/readme.ipynb" />
+        <option value="$PROJECT_DIR$/README.ipynb" />
       </list>
     </option>
   </component>
@@ -271,15 +271,25 @@
       <workItem from="1593291388917" duration="3629000" />
       <workItem from="1593773324473" duration="158000" />
       <workItem from="1594411518086" duration="38691000" />
-      <workItem from="1594655768670" duration="270000" />
+      <workItem from="1594655768670" duration="501000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54062000" />
+    <option name="totallyTimeSpent" value="54293000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26752505" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
