@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 import pandas as pd
 import copy
 import numpy as np
-from diagnostics import Diagnostics
+from python.diagnostics import Diagnostics
 
 
 class LinearSVC:
