@@ -7,10 +7,10 @@ This project contains some basic implementations of common machine learning algo
 * Support Vector Classifier
 * Decision Tree Classifier
 * Random Forest Classifier
+* K-Means Clustering
 
 
 Algorithms in the works:
 
 * Boosting Tree Classifiers (AdaBoost, XGBoost)
 * Perceptron, MLP, and Neural Networks
-* K-Means Clusering
