@@ -9,7 +9,8 @@ import random
 
 class Node:
 
-    def __init__(self, features: pd.DataFrame, target: pd.Series, parent = None, depth=0, feature_for_split = None, cl = None, th = None):
+    def __init__(self, features: pd.DataFrame, target: pd.Series, parent=None, depth=0, feature_for_split=None, cl=None,
+                 th=None):
         self.features = features
         self.target = target
         self.left = None
@@ -42,13 +43,16 @@ class Node:
         return self.feature_for_split
 
 
-
 class Tree:
 
-    def __init__(self, max_depth: int, x, y, forest=False):
+    def __init__(self, max_depth: int, x, y, forest=False, numfeat="sqrt"):
         self.root = Node(x, y)
         self.max_depth = max_depth
         self.isForest = forest
+        self.numfeat = numfeat
+
+    def get_num_split(self):
+        return self.numfeat
 
     def entropy(self, target: pd.Series, feature=None):
         if feature is not None:
@@ -107,8 +111,8 @@ class Tree:
         r = x.iloc[:, col] >= cutoff
         ly = y_true[l]
         ry = y_true[r]
-        lx = x[l].drop(x.columns[col], axis = 1)
-        rx = x[r].drop(x.columns[col], axis = 1)
+        lx = x[l].drop(x.columns[col], axis=1)
+        rx = x[r].drop(x.columns[col], axis=1)
 
         return lx, ly, rx, ry, cutoff
 
@@ -121,15 +125,32 @@ class Tree:
 
         if curr.depth == self.max_depth:
             curr.classification = curr.target.value_counts().idxmax()
+            return curr
         elif curr.features.empty:
             curr.classification = curr.target.value_counts().idxmax()
+            return curr
         elif len(curr.target.unique()) == 1 and curr.target is not None:
             curr.classification = curr.target.unique()[0]
+            return curr
         else:
             if self.isForest and curr.features.shape[1] != 0:
-                num_features_to_use = random.choice(list(range(1, curr.features.shape[1] + 1)))
+
+                split = self.get_num_split()
+
+                if split == 'sqrt':
+                    num_features_to_use = curr.features.shape[1] ** .5
+                elif split == 'log':
+                    num_features_to_use = np.log(curr.features.shape[1])
+                elif split == 'all':
+                    num_features_to_use = curr.features.shape[1]
+                elif isinstance(split, float) and 0 < split < 1:
+                    num_features_to_use = curr.features.shape[1] * split
+                else:
+                    print('using sqrt')
+                    num_features_to_use = curr.features.shape[1] ** .5
+
                 features_to_use = random.sample(list(range(curr.features.shape[1])),
-                                                num_features_to_use)
+                                                int(num_features_to_use))
                 curr.features = curr.features.iloc[:, 0:curr.features.shape[1]][curr.features.columns[features_to_use]]
 
             for j in range(curr.features.shape[1]):
@@ -155,9 +176,7 @@ class Tree:
             self.fit(curr.left)
             self.fit(curr.right)
 
-        return self
-
-    def predict(self, x: pd.DataFrame, train_target: pd.Series):
+    def predict(self, x: pd.DataFrame):
 
         preds = []
         for ix, row in x.iterrows():
@@ -167,7 +186,6 @@ class Tree:
                     curr = curr.left
                 else:
                     curr = curr.right
-
 
             preds.append(curr.classification)
 
@@ -194,9 +212,9 @@ if __name__ == '__main__':
     x_train, x_test, y_train, y_test = train_test_split(df.iloc[:, 0:2], df.iloc[:, 4], random_state=646)
 
     mod = Tree(4, x_train, y_train)
-    x = mod.fit()
+    mod.fit()
 
-    preds = mod.predict(x_test, y_train)
+    preds = mod.predict(x_test)
 
     print(Diagnostics.accuracy(y_test, preds))
     print(Diagnostics.recall(y_test, preds))
