@@ -14,3 +14,5 @@ Algorithms in the works:
 
 * Boosting Tree Classifiers (AdaBoost, XGBoost)
 * Perceptron, MLP, and Neural Networks
+* Hierarchical Clustering
+* Mixture Models
