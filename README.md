@@ -8,6 +8,8 @@ This project contains some basic implementations of common machine learning algo
 * Decision Tree Classifier
 * Random Forest Classifier
 * K-Means Clustering
+* Gaussian Mixture Models
+
 
 
 Algorithms in the works:
@@ -15,4 +17,3 @@ Algorithms in the works:
 * Boosting Tree Classifiers (AdaBoost, GBM)
 * Perceptron, MLP, and ANN, CNN, RNN
 * Hierarchical Clustering
-* Mixture Models
