@@ -3,7 +3,7 @@ from sklearn import datasets
 from sklearn.model_selection import train_test_split
 import numpy as np
 import copy
-from python.diagnostics import Diagnostics
+from src.diagnostics import Diagnostics
 import random
 
 

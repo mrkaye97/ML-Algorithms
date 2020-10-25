@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 import numpy as np
-from python.diagnostics import Diagnostics
+from src.diagnostics import Diagnostics
 from matplotlib import pyplot as plt
 
 
