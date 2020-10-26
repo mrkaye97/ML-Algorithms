@@ -9,11 +9,14 @@ This project contains some basic implementations of common machine learning algo
 * Random Forest Classifier
 * K-Means Clustering
 * Gaussian Mixture Models
+* Perceptron
 
 
 
 Algorithms in the works:
 
-* Boosting Tree Classifiers (AdaBoost, GBM)
-* Perceptron, MLP, and ANN, CNN, RNN
-* Hierarchical Clustering
+* Tree Boosters (AdaBoost, GBM)
+* MLP, and CNN, RNN, LSTM
+* Naive Bayes Classifier
+* Bayesian Linear Regression
+* Regularized Regression (Lasso, Ridge, ElasticNet)
