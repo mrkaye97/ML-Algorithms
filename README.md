@@ -20,3 +20,11 @@ Algorithms in the works:
 * Naive Bayes Classifier
 * Bayesian Linear Regression
 * Regularized Regression (Lasso, Ridge, ElasticNet)
+
+
+
+Also in the works:
+
+* Significant code cleanup and modularization
+* More support for different loss and activation functions
+* More use of `numpy` (especially matrix algebra functions) for performance improvements
