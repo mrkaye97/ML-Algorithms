@@ -20,6 +20,7 @@ Algorithms in the works:
 * Naive Bayes Classifier
 * Bayesian Linear Regression
 * Regularized Regression (Lasso, Ridge, ElasticNet)
+* Bayesian Hyperparameter Optimization
 
 
 
